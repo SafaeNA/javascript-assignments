@@ -10,6 +10,7 @@ formatFullName(firstName, lastName);
 
 //Format the firstName and lastName so that the first letter of each is always capatilized
 firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1); // This will get the first charter
+
 // // Gets everything after the first character
 lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
 console.log("Capitalize first letter", firstName, lastName);
@@ -26,7 +27,7 @@ if (firstName == null || lastName == null) {
 
 formatFullName(firstName, lastName);
 
-//Task 2 ==>  Mathematical Operations with Multiple Parameters
+//Task 2 & 4 ==>  Mathematical Operations with Multiple Parameters & Refectoring
 let price = 24.99;
 let quantity = 5;
 let taxRate = 7.99;
@@ -37,6 +38,9 @@ let discountedTc = (price * quantity - discount) * (1 + taxRate);
 function calculateTotalCost(totalCost) {
   //Ensure that price, quantity, and taxRate are all valid numbers.
   // If any are invalid, return a string: “Invalid input.”
+  // Refactor the calculateTotalCost function from Task 2 to include an optional discount parameter.
+  // If the discount is provided, the function should subtract the discount from the total cost before applying tax.
+  // If no discount is provided, calculate the total cost as before
   if (
     !Number.isFinite(price) ||
     !Number.isFinite(quantity) ||
@@ -70,8 +74,3 @@ function checkEligibility(age, isEmployed) {
   }
 }
 checkEligibility(age, isEmployed);
-
-//Task 4: Refactoring for Reusability
-// Refactor the calculateTotalCost function from Task 2 to include an optional discount parameter.
-// If the discount is provided, the function should subtract the discount from the total cost before applying tax.
-// If no discount is provided, calculate the total cost as before
