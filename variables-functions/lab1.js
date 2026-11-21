@@ -30,7 +30,9 @@ formatFullName(firstName, lastName);
 let price = 24.99;
 let quantity = 5;
 let taxRate = 7.99;
+let discount = 1;
 let totalCost = price * quantity * (1 + taxRate);
+let discountedTc = (price * quantity - discount) * (1 + taxRate);
 
 function calculateTotalCost(totalCost) {
   //Ensure that price, quantity, and taxRate are all valid numbers.
@@ -41,11 +43,13 @@ function calculateTotalCost(totalCost) {
     !Number.isFinite(taxRate)
   ) {
     console.log("Invalid input.");
+  } else if (discount > 0) {
+    console.log("you have a discount, your new total is ", discountedTc);
   } else {
-    console.log("My total including tax is ", totalCost);
+    console.log("sorry you have no discount, your total is ", totalCost);
   }
 }
-calculateTotalCost(totalCost);
+calculateTotalCost(totalCost.toFixed(2)); //to display only 2 decimal places
 
 //Task 3: Functions with Conditional Logic
 
