@@ -1,3 +1,5 @@
+//alert("JavaScript is connected!");
+
 //task1-- Array Manipulation Basics
 
 // Create an empty array called shoppingList.
@@ -63,6 +65,30 @@ filterItems(searchTerm);
 
 //=====================================================
 // Task 3: Render the List in the Browser
-// Create an HTML page with an input field, an “Add Item” button, and an unordered list to display the items.
 // Write a JavaScript function that adds items to the array and updates the displayed list dynamically when the button is clicked.
 // Write another function that removes the last item and updates the displayed list when a “Remove Last Item” button is clicked.
+
+let input = document.getElementById("shoppingInput");
+console.log(input);
+let button = document.getElementById("addItem");
+console.log(button);
+let shoppingListId = document.getElementById("shoppingList");
+
+//function that adds items to the array
+//updates the displayed list dynamically when the button is clicked
+button.addEventListener("click", function () {
+  // Store the input
+  let wantedShoppingItem = input.value;
+  // Create a new DOM element li inside ul
+  let newItem = document.createElement("li");
+
+  // Add input text in the newly created li
+  newItem.textContent = wantedShoppingItem;
+
+  // Add the newly created li to the existing ul
+  console.log("is my new item printing?");
+  shoppingListId.appendChild(newItem);
+});
+
+// Write another function that removes the last item
+//  and updates the displayed list when a “Remove Last Item” button is clicked.
